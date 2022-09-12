@@ -13,21 +13,21 @@
     <?php
     session_start();
     $servername = "localhost";
-    $username = "bit_academy";
-    $password = "bit_academy";
+    $username = "root";
+    $password = "";
     $dbname = "toverlantaarn";
     $charset = "utf8mb4";
 
     try {
         $dsn = "mysql:host=$servername;dbname=$dbname;charset=$charset";
-        $pdo = new PDO($dsn, $username, $password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        $dbh = new PDO($dsn, $username, $password);
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
     }
-    $lanternTitle = $pdo->query('SELECT titel FROM platen')->fetchAll();
-    $lanternID = $pdo->query('SELECT id FROM platen')->fetchAll();
+    $lanternTitle = $dbh->query('SELECT titel FROM platen')->fetchAll();
+    $lanternID = $dbh->query('SELECT id FROM platen')->fetchAll();
     //Control if user is not logged in
     if (!isset($_SESSION['loggedInUser'])) {
         header('Location: login.php');

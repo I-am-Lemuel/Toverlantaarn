@@ -1,8 +1,8 @@
 <?php
 
 $servername = "localhost";
-$username = "bit_academy";
-$password = "bit_academy";
+$username = "root";
+$password = "";
 $dbname = "toverlantaarn";
 $charset = "utf8mb4";
 
