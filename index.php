@@ -11,21 +11,8 @@
 
 <body>
     <?php
-    session_start();
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "toverlantaarn";
-    $charset = "utf8mb4";
+    require_once "connect.php";
 
-    try {
-        $dsn = "mysql:host=$servername;dbname=$dbname;charset=$charset";
-        $dbh = new PDO($dsn, $username, $password);
-        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    } catch (PDOException $e) {
-        echo "Connection failed: " . $e->getMessage();
-    }
     $lanternTitle = $dbh->query('SELECT titel FROM platen')->fetchAll();
     $lanternID = $dbh->query('SELECT id FROM platen')->fetchAll();
     //Control if user is not logged in
@@ -45,7 +32,7 @@
         </div>
         <form method="post" action="index.php">
             <button type="submit" id="logout" name="logout">Log Out</button>
-            </form>
+        </form>
     </header>
     <div class="tables">
         <div class="table1">
@@ -60,18 +47,18 @@
                     </tr>
                     <?php
                     for ($i = 0; $i < count($lanternTitle); $i++) {
-                        ?>
-                            <tr>
+                    ?>
+                        <tr>
                             <td><?= $lanternTitle[$i]["titel"] ?></td>
                             <td><button name="id" type="submit" value="<?= $lanternID[$i]["id"] ?>">Bekijk info</button></td>
                         </tr>
-                        <?php
+                    <?php
                     }
                     ?>
                 </table>
             </form>
             <a href="insert.php">
-                <input type="submit" value="Data toevoegen"/>
+                <input type="submit" value="Data toevoegen" />
             </a>
         </div>
     </div>

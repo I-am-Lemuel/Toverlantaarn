@@ -1,19 +1,7 @@
 <?php
 session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "toverlantaarn";
-$charset = "utf8mb4";
+require_once "connect.php";
 
-try {
-    $dsn = "mysql:host=$servername;dbname=$dbname;charset=$charset";
-    $pdo = new PDO($dsn, $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-}
 $toverlantaarn_username = $pdo->query("SELECT username FROM gebruikers")->fetchAll();
 $toverlantaarn_password = $pdo->query("SELECT password FROM gebruikers")->fetchAll();
 ?>
