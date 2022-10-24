@@ -40,11 +40,12 @@
     ?>
     <header class="idk">
         <div class="header1">
-            <h1>Welkom bij het Toverlantaarn Museum Heilo Beheersysteem</h1>
+            <h3>Welkom bij het Toverlantaarn Museum Heilo Beheersysteem</h3>
+            
         </div>
-    <form method="post" action="index.php">
-        <button type="submit" id="logout" name="logout">Log Out</button>
-    </form>
+        <form method="post" action="index.php">
+            <button type="submit" id="logout" name="logout">Log Out</button>
+            </form>
     </header>
     <div class="tables">
         <div class="table1">
