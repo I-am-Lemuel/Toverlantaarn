@@ -32,9 +32,7 @@ $toverlantaarn_password = $dbh->query("SELECT password FROM gebruikers")->fetchA
             <img src="https://in02.hostcontrol.com/resources/e63479f5bc869c/288e74fb90.PNG" alt="foto" height="100" width="100">
 
     <form class="" method="post" action="login.php">
-    <label class="form-label" type="email"> Gebruikersnaam</label>
         <input type="text" class="form-control" name="username" placeholder="Gebruikersnaam" >
-        <label class="form-label" type ="password"> Wachtwoord</label> 
         <input type="password"class="form-control" name="password" placeholder="Wachtwoord" >
         <input type="submit" class="btn btn-primary w-100" name="submit" value="Inloggen">
     </div>
