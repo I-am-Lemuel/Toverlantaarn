@@ -20,7 +20,7 @@ require_once "connect.php";
         <!-- controleren welke id achter de link staat -->
         <?php
         $id = $_GET["id"];
-        $lanternTable = $pdo->query('SELECT * FROM platen WHERE id = ' . $id)->fetch();
+        $lanternTable = $dbh->query('SELECT * FROM platen WHERE id = ' . $id)->fetch();
         ?>
         <!-- bijbehorende informatie displayen -->
         <h2 class="header1"><?= $lanternTable['titel'] ?></h2>

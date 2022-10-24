@@ -16,7 +16,7 @@ if (isset($_POST['titel'])) {
         (`titel`, `reeks`, `onderwerp`, `platen_nummer`, `in_doos`, `maat`)
         VALUES 
         ('$titel', '$reeks', '$onderwerp', '$platen_nummer', '$in_doos', '$maat')";
-        $pdo->exec($stmt);
+        $dbh->exec($stmt);
     }
 }
 ?>

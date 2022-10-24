@@ -13,9 +13,9 @@ if (isset($_POST["id"])) {
 
     try {
         $dsn = "mysql:host=$servername;dbname=$dbname;charset=$charset";
-        $pdo = new PDO($dsn, $username, $password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        $dbh = new PDO($dsn, $username, $password);
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         $sql = "UPDATE platen SET
         `titel`='$titel',
         `onderwerp`='$onderwerp',
@@ -25,7 +25,7 @@ if (isset($_POST["id"])) {
         `conditie`='$conditie',
         `maat`='$maat'
         WHERE id=$id";
-        $stmt = $pdo->prepare($sql);
+        $stmt = $dbh->prepare($sql);
         $stmt->execute();
         echo "records UPDATED successfully";
     } catch (PDOException $e) {

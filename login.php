@@ -2,8 +2,8 @@
 session_start();
 require_once "connect.php";
 
-$toverlantaarn_username = $pdo->query("SELECT username FROM gebruikers")->fetchAll();
-$toverlantaarn_password = $pdo->query("SELECT password FROM gebruikers")->fetchAll();
+$toverlantaarn_username = $dbh->query("SELECT username FROM gebruikers")->fetchAll();
+$toverlantaarn_password = $dbh->query("SELECT password FROM gebruikers")->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
