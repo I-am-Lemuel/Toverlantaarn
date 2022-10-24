@@ -38,12 +38,14 @@
         header('Location: logout.php');
     }
     ?>
+    <header class="idk">
+        <div class="header1">
+            <h1>Welkom bij het Toverlantaarn Museum Heilo Beheersysteem</h1>
+        </div>
     <form method="post" action="index.php">
         <button type="submit" id="logout" name="logout">Log Out</button>
     </form>
-    <div class="header1">
-        <h1>Welkom bij het Toverlantaarn Museum Heilo Beheersysteem</h1>
-    </div>
+    </header>
     <div class="tables">
         <div class="table1">
             <div class="title">

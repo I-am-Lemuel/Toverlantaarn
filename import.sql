@@ -55,11 +55,11 @@ CREATE TABLE `platen` (
   `conditie` text DEFAULT NULL,
   `maat` text NOT NULL,
   `id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE  InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `platen`
---
+--    
 
 INSERT INTO `platen` (`reeks`, `onderwerp`, `titel`, `platen_nummer`, `in_doos`, `conditie`, `maat`, `id`) VALUES
 ('Primus Junior Lectures', 'Geschiedenis', 'The Conquest Of The Air Chapter I', '1 t/m 8', 'Ja orgineel', 'Compleet zeer goed', '8,3X8,3', 1),

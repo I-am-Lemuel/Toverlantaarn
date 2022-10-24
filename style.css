@@ -7,8 +7,8 @@
     flex-direction: column;
 }
 body{
-    background-color:slategrey;
-    color: snow;
+    background-color:#434c5e;
+    color: #eceff4;
 }
 .table2{
     display: flex;
