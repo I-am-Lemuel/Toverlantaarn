@@ -15,6 +15,7 @@
 
     $lanternTitle = $dbh->query('SELECT titel FROM platen')->fetchAll();
     $lanternID = $dbh->query('SELECT id FROM platen')->fetchAll();
+
     //Control if user is not logged in
     if (!isset($_SESSION['loggedInUser'])) {
         header('Location: login.php');
@@ -28,7 +29,7 @@
     <header class="idk">
         <div class="header1">
             <h3>Welkom bij het Toverlantaarn Museum Heilo Beheersysteem</h3>
-            
+
         </div>
         <form method="post" action="index.php">
             <button type="submit" id="logout" name="logout">Log Out</button>
