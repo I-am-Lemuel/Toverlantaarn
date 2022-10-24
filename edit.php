@@ -1,25 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "toverlantaarn";
-$charset = "utf8mb4";
-
-$id = $_GET['id'] ?? $_POST['id'];
-if (!isset($_GET['id'])) {
-    $id2 = $_POST['id'];
-} else {
-    $id2 = $_GET['id'];
-}
-try {
-    $dsn = "mysql:host=$servername;dbname=$dbname;charset=$charset";
-    $pdo = new PDO($dsn, $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    $lanternTable = $pdo->query('SELECT * FROM platen WHERE id = ' . $id2)->fetch();
-} catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-}
+require_once "connect.php";
 
 // Form is submitted
 if (isset($_POST["id"])) {
