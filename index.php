@@ -11,6 +11,7 @@
 
 <body>
     <?php
+    session_start();
     require_once "connect.php";
 
     $lanternTitle = $dbh->query('SELECT titel FROM platen')->fetchAll();
