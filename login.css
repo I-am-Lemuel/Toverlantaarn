@@ -62,3 +62,11 @@
 .form-label{
   padding-top: 10px;
 }
+
+p {
+  font-size: 12px;
+}
+
+.fout {
+  padding-top: 15px;
+}

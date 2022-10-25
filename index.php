@@ -1,21 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Platen Beheersysteem | Hoofdmenu</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-    <?php
+<?php
     session_start();
     require_once "connect.php";
-
-    $lanternTitle = $dbh->query('SELECT titel FROM platen')->fetchAll();
-    $lanternID = $dbh->query('SELECT id FROM platen')->fetchAll();
+    
 
     //Control if user is not logged in
     if (!isset($_SESSION['loggedInUser'])) {
@@ -26,15 +12,36 @@
     if (isset($_POST['logout'])) {
         header('Location: logout.php');
     }
+
+    $sql_select = "SELECT id, reeks, onderwerp, titel, platen_nummer, in_doos, conditie, maat FROM platen";
+    $sql_query = $dbh->query($sql_select);
     ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platen Beheersysteem | Hoofdmenu</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="https://in02.hostcontrol.com/resources/e63479f5bc869c/288e74fb90.PNG" type="image/png" sizes="16x16">
+</head>
+
+<body>
+
     <header class="idk">
         <div class="header1">
             <h3>Welkom bij het Toverlantaarn Museum Heilo Beheersysteem</h3>
-
         </div>
-        <form method="post" action="index.php">
-            <button type="submit" id="logout" name="logout">Log Out</button>
-        </form>
+        <div class="header2">
+            <form method="post" action="index.php">
+                <button type="submit" class="btn btn-1 hover-filled-slide-left" role="button" name="logout">
+                    <span>Uitloggen</span>
+                </button>
+            </form>
+        </div>
     </header>
     <div class="tables">
         <div class="table1">
@@ -47,16 +54,21 @@
                         <td>Titel</td>
                         <td>Info</td>
                     </tr>
+
                     <?php
-                    for ($i = 0; $i < count($lanternTitle); $i++) {
+                    if ($sql_query->rowCount() > 0) {
+                        while ($row = $sql_query->fetch()) {
                     ?>
-                        <tr>
-                            <td><?= $lanternTitle[$i]["titel"] ?></td>
-                            <td><button name="id" type="submit" value="<?= $lanternID[$i]["id"] ?>">Bekijk info</button></td>
-                        </tr>
+                            <tr>
+                                <td><?= $row['titel'] ?> </td>
+                                <td><a href="details.php?id=<?= $row['id'] ?>">Bekijk Details</a></td>
+                            </tr>
                     <?php
+                        }
                     }
+
                     ?>
+
                 </table>
             </form>
             <a href="insert.php">

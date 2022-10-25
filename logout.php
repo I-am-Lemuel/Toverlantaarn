@@ -10,6 +10,8 @@ require_once "connect.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beheerderspaneel | Uitloggen</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://in02.hostcontrol.com/resources/e63479f5bc869c/288e74fb90.PNG" type="image/png" sizes="16x16">
+
 </head>
 <body>
     <?php
