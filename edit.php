@@ -60,8 +60,6 @@ if (isset($_POST['submit'])) {
     $stmt->execute($edit);
 }
 
-$stmt->debugDumpParams();
-
 
 ?>
 <!DOCTYPE html>
