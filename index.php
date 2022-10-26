@@ -85,7 +85,7 @@
                 </table>
             </form>
             <a href="insert.php">
-            <button type="button" value="Data toevoegen">Danger</button>
+            <button type="button" value="Data toevoegen">Data Toevoegen</button>
             
             </a>
         </div>
