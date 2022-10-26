@@ -24,6 +24,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tbolt/boltcss/bolt.css">
     <title>Platen Beheersysteem | Hoofdmenu</title>
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="https://in02.hostcontrol.com/resources/e63479f5bc869c/288e74fb90.PNG" type="image/png" sizes="16x16">
@@ -51,31 +52,44 @@
             <form method="get" action="details.php">
                 <table>
                     <tr>
-                        <td>Titel</td>
-                        <td>Info</td>
+                        <td>Titel</th>
+                        <td>Info</th>
                     </tr>
-
                     <?php
+                    $rowcounter = 0;
                     if ($sql_query->rowCount() > 0) {
                         while ($row = $sql_query->fetch()) {
-                    ?>
+                            $rowcounter ++;
+                    ?> 
+
                             <tr>
-                                <td><?= $row['titel'] ?> </td>
-                                <td><a href="details.php?id=<?= $row['id'] ?>">Bekijk Details</a></td>
+                                
+                                <td scope="row"><a href="details.php?id=<?= $row['id'] ?>">Bekijk Details</a></td>
+                                <td><?= $row['titel']?> </td>
                             </tr>
                     <?php
+                            if ($rowcounter % 50 == 0) {
+                                ?>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <td>Titel</th>
+                                        <td>Info</th>
+                                    </tr>
+                                <?php
+                            }
                         }
                     }
 
                     ?>
-
                 </table>
             </form>
             <a href="insert.php">
-                <input type="submit" value="Data toevoegen" />
+            <button type="button" value="Data toevoegen">Danger</button>
+            
             </a>
         </div>
     </div>
 </body>
 
-</html>
+</html> 
