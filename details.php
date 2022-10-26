@@ -30,37 +30,37 @@ if (isset($_POST['submit'])) {
     <form action="edit.php" method="get">
         <h2 class="header1"><?= $lanternTable['titel'] ?></h2>
         <br>
-        <table class="table_small">
-            <tr>
-                <th>Informatie</th>
-                <th>Informatie</th>
-            </tr>
-            <tr>
-                <td>Onderwerp</td>
-                <td><?= $lanternTable["onderwerp"] ?></td>
-            </tr>
-            <tr>
-                <td>Reeks</td>
-                <td><?= $lanternTable['reeks'] ?></td>
-            </tr>
-            <tr>
-                <td>Nummers van de platen aanwezig</td>
-                <td><?= $lanternTable["platen_nummer"] ?></td>
-            </tr>
-            <tr>
-                <td>In doos, originele doos of niet</td>
-                <td><?= $lanternTable['in_doos'] ?></td>
-            </tr>
-            <tr>
-                <td>Conditie van de platen</td>
-                <td><?= $lanternTable["conditie"] ?></td>
-            </tr>
-            <tr>
-                <td>Afmetingen van de platen</td>
-                <td><?= $lanternTable['maat'] ?></td>
-            </tr>
-        </table>
-        <button type="submit" name="id" value="<?= $lanternTable["id"] ?>">Wijzig data</button>
+            <table class="table_small">
+                <tr>
+                    <th>Informatie</th>
+                    <th>Informatie</th>
+                </tr>
+                <tr>
+                    <td>Onderwerp</td>
+                    <td><?= $lanternTable["onderwerp"] ?></td>
+                </tr>
+                <tr>
+                    <td>Reeks</td>
+                    <td><?= $lanternTable['reeks'] ?></td>
+                </tr>
+                <tr>
+                    <td>Nummers van de platen aanwezig</td>
+                    <td><?= $lanternTable["platen_nummer"] ?></td>
+                </tr>
+                <tr>
+                    <td>In doos, originele doos of niet</td>
+                    <td><?= $lanternTable['in_doos'] ?></td>
+                </tr>
+                <tr>
+                    <td>Conditie van de platen</td>
+                    <td><?= $lanternTable["conditie"] ?></td>
+                </tr>
+                <tr>
+                    <td>Afmetingen van de platen</td>
+                    <td><?= $lanternTable['maat'] ?></td>
+                </tr>
+            </table>
+            <button type="submit" name="id" value="<?= $lanternTable["id"] ?>">Wijzig data</button>
     </form>
     <form action='delete.php?id="<?= $lanternTable['id']; ?>"' method="post">
         <input type="hidden" name="name" value="<?= $lanternTable["id"] ?>">
