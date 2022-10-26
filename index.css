@@ -11,6 +11,8 @@
 
 body{
     background-color:#434c5e;
+    display: flex;
+    flex-direction: column;
     color: #eceff4;
 }
 
@@ -18,7 +20,7 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-direction: row;
+    flex-direction: row;  
     height: 12vh;
     width: 100%;
 }
@@ -107,8 +109,11 @@ h3 {
   width: 0%;
 }
 
-/* -------------------------- */
 
-
-/* make the anchor tag scale to 1.1 when hovered over
-
+.table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5rem;
+}
