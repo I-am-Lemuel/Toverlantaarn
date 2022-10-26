@@ -59,10 +59,10 @@ $sql_query = $dbh->query($sql_select);
 
     <div class="tables">
         <div class="table1">
-            <div class="title">
+            <div class="title"  >
                 <h2>Platen</h2>
             </div>
-            <form method="get" action="details.php">
+            <form method="get" action="details.php" style="display: flex;justify-content: space-evenly;" >
                 <table>
                     <tr>
                         <td>Titel</th>
@@ -72,8 +72,13 @@ $sql_query = $dbh->query($sql_select);
                     $rowcounter = 0;
                     if ($sql_query->rowCount() > 0) {
                         while ($row = $sql_query->fetch()) {
+<<<<<<< HEAD
                             $rowcounter++;
                     ?>
+=======
+                            $rowcounter ++; 
+                    ?> 
+>>>>>>> refs/remotes/origin/main
 
                             <tr>
 
