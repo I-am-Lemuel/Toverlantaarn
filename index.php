@@ -52,8 +52,8 @@
             <form method="get" action="details.php">
                 <table>
                     <tr>
-                        <td>Info</th>
                         <td>Titel</th>
+                        <td>Info</th>
                     </tr>
                     <?php
                     $rowcounter = 0;
