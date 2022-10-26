@@ -68,7 +68,7 @@
                                 <td><?= $row['titel']?> </td>
                             </tr>
                     <?php
-                            if ($rowcounter % 50 == 0) {
+                            if ($rowcounter % 94 == 0) {
                                 ?>
                                 </table>
                                 <table>

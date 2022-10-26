@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "pass";
+$password = "";
 $dbname = "toverlantaarn";
 $charset = "utf8mb4";
 
