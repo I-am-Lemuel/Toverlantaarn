@@ -35,7 +35,7 @@ $sql_query = $dbh->query($sql_select);
     <header>
         <div class="container">
             <div class="empty">
-                
+
             </div>
             <div class="text">
                 <h3>Welkom bij het Toverlantaarn Museum Heilo Beheersysteem</h3>
@@ -72,13 +72,8 @@ $sql_query = $dbh->query($sql_select);
                     $rowcounter = 0;
                     if ($sql_query->rowCount() > 0) {
                         while ($row = $sql_query->fetch()) {
-<<<<<<< HEAD
-                            $rowcounter++;
-                    ?>
-=======
                             $rowcounter ++; 
                     ?> 
->>>>>>> refs/remotes/origin/main
 
                             <tr>
 
