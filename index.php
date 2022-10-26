@@ -49,7 +49,7 @@
             <div class="title"  >
                 <h2>Platen</h2>
             </div>
-            <form method="get" action="details.php" style="display: flex">
+            <form method="get" action="details.php" style="display: flex;justify-content: space-evenly;" >
                 <table>
                     <tr>
                         <td>Titel</th>
