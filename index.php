@@ -65,8 +65,8 @@ $sql_query = $dbh->query($sql_select);
             <form method="get" action="details.php" style="display: flex;justify-content: space-evenly;" >
                 <table>
                     <tr>
-                        <td>Titel</th>
                         <td>Info</th>
+                        <td>Titel</th>
                     </tr>
                     <?php
                     $rowcounter = 0;
@@ -86,8 +86,8 @@ $sql_query = $dbh->query($sql_select);
                 </table>
                 <table>
                     <tr>
-                        <td>Titel</th>
                         <td>Info</th>
+                        <td>Titel</th>
                     </tr>
         <?php
                             }
